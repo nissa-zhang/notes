@@ -1,0 +1,99 @@
+１検索
+SELECT 列名1, 列名2, 列名3　--＊全部
+  FROM 表名
+2 条件付きの検索
+SELECT 列名1, 列名2, 列名3
+ FROM 表名
+ WHERE 条件1 --列名=XXX,<>XXX,>XXX,<XXX
+  and 条件2
+  or 条件3
+  NOT 条件4 --先NOT, AND,OR 后
+3 行を追加
+INSERT INTO 表名
+--INSERT INTO 表名(列名1, 列名2, 列名3)
+　VALUES (内容1, '内容2', '内容3',) 
+4 行を消除
+ DELECT FROM 表名
+  WHERE 条件1
+5  データを更新
+UPDATE 表名
+ SET 列名＝XXX
+ --SET(列1, 列2)=('XXX',XXXX)
+ WHERE 列名='XXX'
+6 別名の定義
+SELECT 列名1 AS 別名
+ FROM 表名 AS 別名
+7 NULLの判定
+　WHERE 列名 IS NULL --IS NOT NULL
+8 LIKE 演算子
+　WHERE 列名 LIKE ’XXX___%‘ --_ 一个文字位，%0个以上的文字位
+9 BETWEEN 演算子
+ WHERE 列名 BETWEEN XX AND XXXX -->=XX and <=XXXX
+10 IN/NOT IN 演算子
+ WHERE 列名 IN(‘列值1’,‘列值2’)
+11 DISTINCE 重复行除去-----distince 不同
+ SELECT DISTINCE 列名 FROM 表名
+12 ORDER BY 排序
+ SELECT DISTINCE */列名 FROM 表名
+  ORDER BY 列名1 DESC, 列名2 DESC --ASC可以省略,列名可以用数字代替，by后面的列名顺序可以自定义
+13 LIMIT （OFFSET）
+ SELECT DISTINCE */列名 FROM 表名
+  (ORDER BY 列名..)
+  limit 行数 （OFFSET 先头除去的行数）
+14 UNION EXCEPT INTERSECT 集合之间的运算 + - 取重复 
+  SELECT FROM 
+   UNION EXCEPT INTERSECT ---EXCEPT ALL 重复的不去除 INTERSECT ALL
+   SELECT FROM 
+15 列的运算和别名
+　 SELECT 列名，列名+100 as 增加了100の列名
+    FROM 表名
+　 UPDATE 列名 SET 列名+100 --原表直接更新
+16 CASE 根据列的值，通过一定的条件式生成不同的值(新建一个列）
+  SELECT 列名
+   CASE 列名 WHEN‘’ THEN ''
+            WHEN‘’ THEN ''
+            (ELSE'')
+    END (AS 新列名)
+  FROM 表名
+17 TRIM 除去空白(LTRIM除去左空白,RTRIM除去右空白)
+  TRIM(列名)----trim的意思是修建
+18 列的一部分内容置换
+  REPLACE(置换对象列名，‘置换前文字’，‘置换后文字’)
+19 提取含某文字的列
+  SUBSTRING(列名，对照开始位置，对照结束位置) like ‘%对照文字%’---STRING的意思是字符串
+20 更改小数点位置
+  ROUND(列名，数字) 正数左移，负数右移
+21阶乘
+ POWER(列名，数字)
+22 获得日期和时间
+ CURRENT_DATE, CURRENT_TIME
+23 变换数值类型-------cast铸件，投
+ CAST(要转换的列名 as 变化后的数值类型)
+24 获得最初不是空值的值-----合并合流
+ COALESCE(列名)
+ COALESCE(メモ,’null文字列明示’)
+ 
+
+
+
+
+  
+ 
+
+　/*
+全角　ゼンかく　半角　はんかく　空白　くうはく　小文字　こもじ　大文字　おおもじ 改行　かいぎょう
+，読点（とうてん）Commas
+；セミコロン semicolon
+’’単一引用符（たんいちいんようふ）,シングルクォーテーション　single Quotation
+--ハイフン Hyphens
++ プラス　足すたす　2に3を加えば5になる。／２加上３就成了５。足し算（たしざん）加法（かほう）
+- マイナス，引く﹐ダッシュ﹐ハイフン ３から２を引けば１になる。／从３减去２成为１。引き算（ひきざん）减法（げんほう）
+* かける アスタリスク (asterisk)﹐スター﹐ほし﹐３を２でかけると６になる。／３用２来乘等于６。挂け算（かけざん、乘法）乗法（じょうほう）
+/　スラッシュ (slash)，分け算（わけざん、除法）除法（じょほう）
+= イコール (equal) 等号（とうごう）()
+<> イコールならず
+べき计算（べきけいさん）”，次方读作“乗（じょう）”，比如：二の三乗は八（2的立方是8）
+>= 大(だい)なりイコール
+<= 小(しょう)なりイコール
+|| 文字列 　れんせつ
+
